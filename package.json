@@ -11,22 +11,27 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "apollo": "^2.33.4",
+    "apollo": "^2.31.1",
+    "autoprefixer": "^10.0.2",
     "graphql": "^15.5.1",
+    "postcss": "^8.1.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.11.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "rimraf": "^3.0.2",
+    "tailwindcss": "^2.0.1",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
     "tailwind:build": "tailwind build ./src/styles/tailwind.css -o ./src/styles/styles.css",
-    "start": "react-scripts start",
+    "start": "yarn tailwind:build & react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "apollo:codegen": "apollo client:codegen src/__generated__ --target=typescript --outputFlat"
   },
   "eslintConfig": {
     "extends": [
